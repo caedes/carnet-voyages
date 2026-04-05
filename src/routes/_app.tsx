@@ -18,6 +18,7 @@ function AppLayout() {
           alignItems: 'center',
           justifyContent: 'center',
           minHeight: '100vh',
+          background: '#0f172a',
         }}
       >
         <Spin size="large" />
