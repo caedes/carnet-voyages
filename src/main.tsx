@@ -6,7 +6,7 @@ import { getRouter } from './router'
 import './styles.css'
 
 Sentry.init({
-  dsn: 'https://cc4032fc879a4628c450357484e984a1@o4511166335090688.ingest.de.sentry.io/4511166346297424',
+  dsn: import.meta.env.VITE_SENTRY_DSN,
   sendDefaultPii: true,
 })
 
