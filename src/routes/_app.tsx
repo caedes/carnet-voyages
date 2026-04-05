@@ -32,7 +32,7 @@ function AppLayout() {
 
   return (
     <>
-      <div style={{ paddingBottom: 72 }}>
+      <div style={{ paddingBottom: 72, minHeight: '100vh', background: '#0f172a', color: '#e2e8f0' }}>
         <Outlet />
       </div>
       <BottomTabs />
