@@ -37,7 +37,7 @@ function LoginPage() {
       background: 'linear-gradient(135deg, #0f172a, #1e293b)',
       color: '#e2e8f0',
     }}>
-      <Space direction="vertical" align="center" size="large">
+      <Space orientation="vertical" align="center" size="large">
         <div style={{ fontSize: 48 }}>🍁</div>
         <Title level={2} style={{ color: '#e2e8f0', margin: 0 }}>
           La Boucle des Traditions
