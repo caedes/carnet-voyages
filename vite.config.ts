@@ -10,7 +10,11 @@ const config = defineConfig({
   plugins: [
     devtools(),
     tsconfigPaths({ projects: ['./tsconfig.json'] }),
-    tanstackStart(),
+    tanstackStart({
+      server: {
+        preset: 'netlify',
+      },
+    }),
     viteReact(),
   ],
 })
