@@ -4,6 +4,8 @@ import {
   Scripts,
   createRootRouteWithContext,
 } from '@tanstack/react-router'
+import { ConfigProvider, theme } from 'antd'
+import frFR from 'antd/locale/fr_FR'
 
 import appCss from '../styles.css?url'
 
@@ -26,7 +28,25 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
     links: [{ rel: 'stylesheet', href: appCss }],
   }),
   shellComponent: RootDocument,
+  component: RootComponent,
 })
+
+function RootComponent() {
+  return (
+    <ConfigProvider
+      locale={frFR}
+      theme={{
+        algorithm: theme.darkAlgorithm,
+        token: {
+          colorPrimary: '#6366f1',
+          borderRadius: 12,
+        },
+      }}
+    >
+      <Outlet />
+    </ConfigProvider>
+  )
+}
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (

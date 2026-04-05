@@ -3,7 +3,16 @@
     "allow": [
       "Bash(pdftoppm -v)",
       "Bash(pdftotext:*)",
-      "Bash(/Users/romain.laurent/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/scripts/start-server.sh:*)"
+      "Bash(/Users/romain.laurent/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/scripts/start-server.sh:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m ':*)",
+      "Bash(yarn add:*)",
+      "Bash(yarn remove:*)",
+      "Bash(timeout 15 yarn dev)",
+      "Bash(timeout 20 yarn dev)",
+      "Bash(git commit:*)",
+      "Bash(yarn vite:*)",
+      "Bash(yarn build:*)"
     ]
   }
 }
