@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^6.1.1",
-    "@sentry/tanstackstart-react": "^10.42.0",
+    "@sentry/react": "^10.47.0",
     "@tanstack/react-devtools": "latest",
     "@tanstack/react-form": "latest",
     "@tanstack/react-query": "latest",
