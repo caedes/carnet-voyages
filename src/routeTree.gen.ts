@@ -15,6 +15,7 @@ import { Route as AppIndexRouteImport } from './routes/_app/index'
 import { Route as JourDayIdRouteImport } from './routes/jour/$dayId'
 import { Route as AppSouvenirsRouteImport } from './routes/_app/souvenirs'
 import { Route as AppInfosRouteImport } from './routes/_app/infos'
+import { Route as JourDayIdSouvenirNouveauRouteImport } from './routes/jour/$dayId_.souvenir.nouveau'
 
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
@@ -45,6 +46,12 @@ const AppInfosRoute = AppInfosRouteImport.update({
   path: '/infos',
   getParentRoute: () => AppRoute,
 } as any)
+const JourDayIdSouvenirNouveauRoute =
+  JourDayIdSouvenirNouveauRouteImport.update({
+    id: '/jour/$dayId_/souvenir/nouveau',
+    path: '/jour/$dayId/souvenir/nouveau',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof AppIndexRoute
@@ -52,6 +59,7 @@ export interface FileRoutesByFullPath {
   '/infos': typeof AppInfosRoute
   '/souvenirs': typeof AppSouvenirsRoute
   '/jour/$dayId': typeof JourDayIdRoute
+  '/jour/$dayId/souvenir/nouveau': typeof JourDayIdSouvenirNouveauRoute
 }
 export interface FileRoutesByTo {
   '/login': typeof LoginRoute
@@ -59,6 +67,7 @@ export interface FileRoutesByTo {
   '/souvenirs': typeof AppSouvenirsRoute
   '/jour/$dayId': typeof JourDayIdRoute
   '/': typeof AppIndexRoute
+  '/jour/$dayId/souvenir/nouveau': typeof JourDayIdSouvenirNouveauRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -68,12 +77,25 @@ export interface FileRoutesById {
   '/_app/souvenirs': typeof AppSouvenirsRoute
   '/jour/$dayId': typeof JourDayIdRoute
   '/_app/': typeof AppIndexRoute
+  '/jour/$dayId_/souvenir/nouveau': typeof JourDayIdSouvenirNouveauRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/login' | '/infos' | '/souvenirs' | '/jour/$dayId'
+  fullPaths:
+    | '/'
+    | '/login'
+    | '/infos'
+    | '/souvenirs'
+    | '/jour/$dayId'
+    | '/jour/$dayId/souvenir/nouveau'
   fileRoutesByTo: FileRoutesByTo
-  to: '/login' | '/infos' | '/souvenirs' | '/jour/$dayId' | '/'
+  to:
+    | '/login'
+    | '/infos'
+    | '/souvenirs'
+    | '/jour/$dayId'
+    | '/'
+    | '/jour/$dayId/souvenir/nouveau'
   id:
     | '__root__'
     | '/_app'
@@ -82,12 +104,14 @@ export interface FileRouteTypes {
     | '/_app/souvenirs'
     | '/jour/$dayId'
     | '/_app/'
+    | '/jour/$dayId_/souvenir/nouveau'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   AppRoute: typeof AppRouteWithChildren
   LoginRoute: typeof LoginRoute
   JourDayIdRoute: typeof JourDayIdRoute
+  JourDayIdSouvenirNouveauRoute: typeof JourDayIdSouvenirNouveauRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -134,6 +158,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppInfosRouteImport
       parentRoute: typeof AppRoute
     }
+    '/jour/$dayId_/souvenir/nouveau': {
+      id: '/jour/$dayId_/souvenir/nouveau'
+      path: '/jour/$dayId/souvenir/nouveau'
+      fullPath: '/jour/$dayId/souvenir/nouveau'
+      preLoaderRoute: typeof JourDayIdSouvenirNouveauRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -155,6 +186,7 @@ const rootRouteChildren: RootRouteChildren = {
   AppRoute: AppRouteWithChildren,
   LoginRoute: LoginRoute,
   JourDayIdRoute: JourDayIdRoute,
+  JourDayIdSouvenirNouveauRoute: JourDayIdSouvenirNouveauRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
