@@ -69,8 +69,8 @@ export const ITINERARY: Day[] = [
       { from: 'Montréal', to: 'Ottawa', distance: '200 km', duration: '2h', googleMapsUrl: 'https://www.google.com/maps/dir/Montreal,+QC/Ottawa,+ON' },
     ],
     documents: [
-      { icon: '🏛️', label: 'Visite du Sénat', detail: 'Réservé parl.ca · Gratuit · 3 personnes · Arriver 15h20', url: '' },
-      { icon: '🏨', label: 'Ottawa Embassy Hotel & Suites', detail: 'Réf. 5815.166.619 · Code 0309 · Parking CAD 28/j', url: '' },
+      { icon: '🏛️', label: 'Visite du Sénat', detail: 'Réservé parl.ca · Gratuit · 3 personnes · Arriver 15h20', url: 'https://drive.google.com/file/d/1nG1gtPfH4v1Gczqe-qgYpy2EEvx-QhNU/view?usp=sharing' },
+      { icon: '🏨', label: 'Ottawa Embassy Hotel & Suites', detail: 'Réf. 5815.166.619 · Code 0309 · Parking CAD 28/j', url: 'https://drive.google.com/file/d/1Y2SaCbY8tLpjnfh6jzMUIdQNhvIZcHKB/view?usp=sharing' },
     ],
     stages: ['Colline du Parlement', 'Marché By', 'Sénat du Canada', 'Ottawa Embassy Hotel'],
     tips: [],
@@ -97,8 +97,9 @@ export const ITINERARY: Day[] = [
       { from: 'Parc Oméga, Montebello', to: 'Ottawa', distance: '75 km', duration: '0h45', googleMapsUrl: 'https://www.google.com/maps/dir/Parc+Omega,+Route+323+Nord,+Montebello,+QC/Ottawa,+ON' },
     ],
     documents: [
-      { icon: '🦌', label: 'Parc Oméga', detail: 'Commande C584830 · Billets W89483214 · W91290942 · W46500683 · CAD 139,70 · Entrée 10h00', url: '' },
-      { icon: '🏨', label: 'Ottawa Embassy Hotel', detail: '2e nuit · Réf. 5815.166.619 · Check-out dim 12 avr', url: '' },
+      { icon: '🦌', label: 'Parc Oméga — Billets', detail: 'Commande C584830 · Billets W89483214 · W91290942 · W46500683 · CAD 139,70 · Entrée 10h00', url: 'https://drive.google.com/file/d/1QQN2XW_cMHGocmXZOWcBp9MRObv7WXHR/view?usp=sharing' },
+      { icon: '🗺️', label: 'Parc Oméga — Carte', detail: 'Carte du parc (circuit voiture)', url: 'https://drive.google.com/file/d/1qR8Nl6eXo8Tj0XCYR9x4cXazJrS-2hrY/view?usp=sharing' },
+      { icon: '🏨', label: 'Ottawa Embassy Hotel', detail: '2e nuit · Réf. 5815.166.619 · Check-out dim 12 avr', url: 'https://drive.google.com/file/d/1Y2SaCbY8tLpjnfh6jzMUIdQNhvIZcHKB/view?usp=sharing' },
     ],
     stages: ['Parc Oméga', 'Ottawa soirée libre'],
     tips: [
@@ -129,8 +130,8 @@ export const ITINERARY: Day[] = [
       { from: 'Sucrerie de la Montagne, Rigaud', to: 'Québec, QC', distance: '280 km', duration: '2h30', googleMapsUrl: 'https://www.google.com/maps/dir/Sucrerie+de+la+Montagne,+Rigaud,+QC/Quebec+City,+QC' },
     ],
     documents: [
-      { icon: '🍁', label: 'Sucrerie de la Montagne', detail: 'Commande #443701 · 11h30 · 3 personnes · CAD 180,50', url: '' },
-      { icon: '🏨', label: 'Petit Hôtel – Café Krieghoff', detail: 'Réf. 5520.787.332 · Code 3510 · +1 418 522 3711', url: '' },
+      { icon: '🍁', label: 'Sucrerie de la Montagne', detail: 'Commande #443701 · 11h30 · 3 personnes · CAD 180,50', url: 'https://drive.google.com/file/d/1MLVaBZNYVOztcSGMqCLOmqk02CvCvMeJ/view?usp=sharing' },
+      { icon: '🏨', label: 'Petit Hôtel – Café Krieghoff', detail: 'Réf. 5520.787.332 · Code 3510 · +1 418 522 3711', url: 'https://drive.google.com/file/d/1gE9tojo_VmHTXh-2PEOozxlnq9u1Kguz/view?usp=sharing' },
     ],
     stages: ['Sucrerie de la Montagne', 'Route vers Québec', 'Petit Hôtel Krieghoff'],
     tips: [
@@ -157,7 +158,7 @@ export const ITINERARY: Day[] = [
     ],
     routes: [],
     documents: [
-      { icon: '🏨', label: 'Petit Hôtel Krieghoff', detail: '2e nuit', url: '' },
+      { icon: '🏨', label: 'Petit Hôtel Krieghoff', detail: '2e nuit', url: 'https://drive.google.com/file/d/1gE9tojo_VmHTXh-2PEOozxlnq9u1Kguz/view?usp=sharing' },
     ],
     stages: ['Château Frontenac', 'Quartier Petit-Champlain', 'Plaines d\'Abraham'],
     tips: [],
@@ -183,8 +184,8 @@ export const ITINERARY: Day[] = [
       { from: 'Chute Montmorency', to: 'Île d\'Orléans', distance: '15 km', duration: '0h20', googleMapsUrl: 'https://www.google.com/maps/dir/Parc+de+la+Chute-Montmorency/Ile+d\'Orleans,+QC' },
     ],
     documents: [
-      { icon: '🎵', label: 'Concert Paul Mirabel', detail: 'Centre Vidéotron · Sec. 103 · Rangée RR · Sièges 15–17', url: '' },
-      { icon: '🏨', label: 'Petit Hôtel Krieghoff', detail: '3e nuit · Réf. 5520.787.332 · Check-out 15 avr avant 11h', url: '' },
+      { icon: '🎵', label: 'Concert Paul Mirabel', detail: 'Centre Vidéotron · Sec. 103 · Rangée RR · Sièges 15–17', url: 'https://www.ticketmaster.fr' },
+      { icon: '🏨', label: 'Petit Hôtel Krieghoff', detail: '3e nuit · Réf. 5520.787.332 · Check-out 15 avr avant 11h', url: 'https://drive.google.com/file/d/1gE9tojo_VmHTXh-2PEOozxlnq9u1Kguz/view?usp=sharing' },
     ],
     stages: ['Chute Montmorency', 'Île d\'Orléans', 'Concert Paul Mirabel'],
     tips: [
@@ -214,7 +215,7 @@ export const ITINERARY: Day[] = [
       { from: 'Baie-Saint-Paul, QC', to: 'La Malbaie, QC', distance: '40 km', duration: '0h45', googleMapsUrl: 'https://www.google.com/maps/dir/Baie-Saint-Paul,+QC/La+Malbaie,+QC' },
     ],
     documents: [
-      { icon: '🏨', label: 'Hôtel Le Petit Manoir du Casino', detail: 'Réf. 6415.507.197 · Code 9541 · +1 418 665 0000 · Dépôt CAD 250 · Parking gratuit', url: '' },
+      { icon: '🏨', label: 'Hôtel Le Petit Manoir du Casino', detail: 'Réf. 6415.507.197 · Code 9541 · +1 418 665 0000 · Dépôt CAD 250 · Parking gratuit', url: 'https://drive.google.com/file/d/1T5R-RJ_PJzvfWgh3zx17PVzsVhZkjdg1/view?usp=sharing' },
     ],
     stages: ['Baie-Saint-Paul', 'Route 362 Charlevoix', 'La Malbaie'],
     tips: [
@@ -245,7 +246,7 @@ export const ITINERARY: Day[] = [
       { from: 'Rivière-Éternité, QC', to: 'Baie-Sainte-Catherine, QC', distance: '45 km', duration: '0h40', googleMapsUrl: 'https://www.google.com/maps/dir/Riviere-Eternite,+QC/Baie-Sainte-Catherine,+QC' },
     ],
     documents: [
-      { icon: '🏨', label: 'Gîte la Maison Rochefort', detail: 'Réf. 6415.533.267 · Code 4316 · Pdéj inclus · À 200m du traversier', url: '' },
+      { icon: '🏨', label: 'Gîte la Maison Rochefort', detail: 'Réf. 6415.533.267 · Code 4316 · Pdéj inclus · À 200m du traversier', url: 'https://drive.google.com/file/d/1yYvCUJxj90uhIzkDxIcu2nq5qPQ773VY/view?usp=sharing' },
     ],
     stages: ['L\'Anse-Saint-Jean', 'Cap Trinité / Rivière-Éternité', 'Baie-Sainte-Catherine'],
     tips: ['Le traversier pour Tadoussac part à 200m du gîte — J10 matin en 5 min !'],

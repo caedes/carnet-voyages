@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "carnet-voyages"
+  },
+  "targets": {
+    "carnet-voyages": {
+      "storage": {
+        "default": [
+          "carnet-voyages.firebasestorage.app"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
