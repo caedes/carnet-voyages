@@ -1,7 +1,6 @@
-import { createFileRoute, Link, useNavigate } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
 import { Button, Typography, Card, Empty } from 'antd'
 import {
-  LeftOutlined,
   EnvironmentOutlined,
   PlusOutlined,
   PlayCircleOutlined,
@@ -12,7 +11,7 @@ import { useMemoriesByDay } from '#/lib/memories'
 
 const { Text } = Typography
 
-export const Route = createFileRoute('/jour/$dayId')({
+export const Route = createFileRoute('/_app/jour/$dayId')({
   component: DayDetailPage,
 })
 
@@ -34,7 +33,6 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
 
 function DayDetailPage() {
   const { dayId } = Route.useParams()
-  const navigate = useNavigate()
   const day = getDay(dayId)
   const { data: memories = [] } = useMemoriesByDay(dayId)
 
@@ -77,12 +75,6 @@ function DayDetailPage() {
     >
       {/* Header */}
       <div style={{ marginBottom: 24 }}>
-        <Button
-          type="text"
-          icon={<LeftOutlined />}
-          onClick={() => navigate({ to: '/' })}
-          style={{ color: '#e2e8f0', padding: 0, marginBottom: 12 }}
-        />
         <Text
           style={{
             display: 'block',
