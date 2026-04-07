@@ -185,7 +185,7 @@ export const ITINERARY: Day[] = [
       { from: 'Chute Montmorency', to: 'Île d\'Orléans', distance: '15 km', duration: '0h20', googleMapsUrl: 'https://www.google.com/maps/dir/Parc+de+la+Chute-Montmorency/Ile+d\'Orleans,+QC' },
     ],
     documents: [
-      { icon: '🎵', label: 'Concert Paul Mirabel', detail: 'Centre Vidéotron · Sec. 103 · Rangée RR · Sièges 15–17', url: 'https://www.ticketmaster.fr' },
+      { icon: '🎵', label: 'Spectacle Paul Mirabel', detail: 'Centre Vidéotron · Sec. 103 · Rangée RR · Sièges 15–17', url: 'https://www.ticketmaster.fr' },
       { icon: '🏨', label: 'Petit Hôtel Krieghoff', detail: '3e nuit · Réf. 5520.787.332 · Check-out 15 avr avant 11h', url: 'https://drive.google.com/file/d/1gE9tojo_VmHTXh-2PEOozxlnq9u1Kguz/view?usp=sharing' },
     ],
     stages: ['Chute Montmorency', 'Île d\'Orléans', 'Concert Paul Mirabel'],
