@@ -66,8 +66,8 @@ function AddMemoryPage() {
         dayId,
         stageLabel: selectedStage,
         description: description.trim(),
-        authorEmail: selectedAuthor?.email ?? '',
-        authorName: selectedAuthor?.name ?? '',
+        authorEmail: selectedAuthor.email,
+        authorName: selectedAuthor.name,
         media: mediaItems,
       })
 
