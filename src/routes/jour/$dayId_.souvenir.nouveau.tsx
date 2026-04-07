@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import { Button, Input, message, Progress } from 'antd'
 import { LeftOutlined } from '@ant-design/icons'
 import { getDay } from '#/data/itinerary'
-import { FAMILY_MEMBERS } from '#/data/family'
+import { useFamilyMembers } from '#/data/family'
 import { useAuth } from '#/lib/auth'
 import { useCreateMemory } from '#/lib/memories'
 import { uploadMedia } from '#/lib/storage'
@@ -20,19 +20,25 @@ function AddMemoryPage() {
   const day = getDay(dayId)
   const auth = useAuth()
   const createMemory = useCreateMemory()
+  const { data: familyMembers = [] } = useFamilyMembers()
 
   const [selectedStage, setSelectedStage] = useState(day?.stages[0] ?? '')
   const [files, setFiles] = useState<File[]>([])
   const [description, setDescription] = useState('')
-  const [selectedAuthor, setSelectedAuthor] = useState(() => {
-    if (auth.status === 'authenticated') {
-      const member = FAMILY_MEMBERS.find((m) => m.email === auth.user.email)
-      return member ?? FAMILY_MEMBERS[0]
-    }
-    return FAMILY_MEMBERS[0]
-  })
+  const [selectedAuthor, setSelectedAuthor] = useState<{ email: string; name: string; initial: string } | null>(null)
   const [uploading, setUploading] = useState(false)
   const [progress, setProgress] = useState(0)
+
+  useEffect(() => {
+    if (familyMembers.length > 0 && !selectedAuthor) {
+      if (auth.status === 'authenticated') {
+        const member = familyMembers.find((m) => m.email === auth.user.email)
+        setSelectedAuthor(member ?? familyMembers[0])
+      } else {
+        setSelectedAuthor(familyMembers[0])
+      }
+    }
+  }, [familyMembers, auth, selectedAuthor])
 
   if (!day) return null
 
@@ -59,8 +65,8 @@ function AddMemoryPage() {
         dayId,
         stageLabel: selectedStage,
         description: description.trim(),
-        authorEmail: selectedAuthor.email,
-        authorName: selectedAuthor.name,
+        authorEmail: selectedAuthor?.email ?? '',
+        authorName: selectedAuthor?.name ?? '',
         media: mediaItems,
       })
 
@@ -200,7 +206,7 @@ function AddMemoryPage() {
           Auteur
         </span>
         <div style={{ display: 'flex', gap: 12 }}>
-          {FAMILY_MEMBERS.map((member) => (
+          {familyMembers.map((member) => (
             <button
               key={member.email}
               onClick={() => setSelectedAuthor(member)}
@@ -209,11 +215,11 @@ function AddMemoryPage() {
                 height: 48,
                 borderRadius: '50%',
                 border:
-                  selectedAuthor.email === member.email
+                  selectedAuthor?.email === member.email
                     ? '3px solid #6366f1'
                     : '3px solid transparent',
                 background:
-                  selectedAuthor.email === member.email
+                  selectedAuthor?.email === member.email
                     ? '#6366f1'
                     : '#334155',
                 color: '#fff',
