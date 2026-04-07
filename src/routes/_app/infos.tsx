@@ -4,6 +4,7 @@ import { Card, Typography, Button, message } from 'antd'
 import { PhoneOutlined, FilePdfOutlined } from '@ant-design/icons'
 import { ref, getDownloadURL } from 'firebase/storage'
 import { getFirebaseStorage } from '#/lib/firebase'
+import { useMemoriesCount } from '#/lib/memories'
 import {
   BUDGET_CATEGORIES,
   BUDGET_TOTAL_CONFIRMED,
@@ -41,6 +42,7 @@ const sectionTitle = (text: string) => (
 
 function InfosPage() {
   const [pdfLoading, setPdfLoading] = useState(false)
+  const { data: memoriesCount } = useMemoriesCount()
 
   const handleOpenPdf = async () => {
     setPdfLoading(true)
@@ -148,7 +150,7 @@ function InfosPage() {
             { value: TRIP_STATS.days, label: 'jours' },
             { value: `${TRIP_STATS.km} km`, label: 'parcourus' },
             { value: TRIP_STATS.nights, label: 'nuits' },
-            { value: TRIP_STATS.souvenirs, label: 'souvenirs' },
+            { value: memoriesCount ?? '…', label: 'souvenirs' },
           ].map((stat) => (
             <div
               key={stat.label}
