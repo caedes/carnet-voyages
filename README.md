@@ -10,7 +10,10 @@ Notre carnet de voyage en famille au Canada, été 2026 — avec Cécilia et Jul
 
 ## Pour les développeurs
 
-Voir [docs/TECHNICAL.md](docs/TECHNICAL.md) pour la documentation technique et [AGENTS.md](AGENTS.md) pour les conventions du projet.
+- [docs/TECHNICAL.md](docs/TECHNICAL.md) — Documentation technique
+- [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) — Déploiement (Netlify, Firebase Auth, rules)
+- [scripts/README.md](scripts/README.md) — Gestion des accès famille
+- [AGENTS.md](AGENTS.md) — Conventions du projet (pour les agents IA)
 
 ---
 

@@ -3,15 +3,15 @@ service firebase.storage {
   match /b/{bucket}/o {
     function isAllowedUser() {
       return request.auth != null &&
-        request.auth.token.email in [
-          'laurentromain@gmail.com',
-          'cecilia.verrons@gmail.com',
-          'julia9laurent@gmail.com'
-        ];
+        request.auth.token.familyMember == true;
     }
 
     match /memories/{allPaths=**} {
       allow read, write: if isAllowedUser();
+    }
+
+    match /documents/{allPaths=**} {
+      allow read: if isAllowedUser();
     }
   }
 }

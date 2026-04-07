@@ -1,17 +1,27 @@
+import { useQuery } from '@tanstack/react-query'
+import { collection, getDocs } from 'firebase/firestore'
+import { getFirebaseDb } from '#/lib/firebase'
 import type { FamilyMember } from './types'
 
-export const FAMILY_MEMBERS: FamilyMember[] = [
-  { email: import.meta.env.VITE_ALLOWED_EMAILS?.split(',')[0] ?? '', name: 'Romain', initial: 'R' },
-  { email: import.meta.env.VITE_ALLOWED_EMAILS?.split(',')[1] ?? '', name: 'Maman', initial: 'M' },
-  { email: import.meta.env.VITE_ALLOWED_EMAILS?.split(',')[2] ?? '', name: 'Lily', initial: 'L' },
-]
-
-export const ALLOWED_EMAILS = import.meta.env.VITE_ALLOWED_EMAILS?.split(',') ?? []
-
-export function isEmailAllowed(email: string): boolean {
-  return ALLOWED_EMAILS.includes(email)
+async function fetchFamilyMembers(): Promise<FamilyMember[]> {
+  const db = getFirebaseDb()
+  const snapshot = await getDocs(collection(db, 'family'))
+  return snapshot.docs.map((doc) => ({
+    email: doc.data().email,
+    name: doc.data().name,
+    initial: doc.data().name?.[0] ?? '?',
+  }))
 }
 
-export function getFamilyMember(email: string): FamilyMember | undefined {
-  return FAMILY_MEMBERS.find((m) => m.email === email)
+export function useFamilyMembers() {
+  return useQuery({
+    queryKey: ['family-members'],
+    queryFn: fetchFamilyMembers,
+    staleTime: Infinity,
+  })
+}
+
+export function useFamilyMember(email: string | undefined) {
+  const { data: members } = useFamilyMembers()
+  return members?.find((m) => m.email === email)
 }
