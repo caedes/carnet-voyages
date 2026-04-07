@@ -11,6 +11,9 @@ const config = defineConfig({
     TanStackRouterVite(),
     viteReact(),
   ],
+  test: {
+    environment: 'jsdom',
+  },
 })
 
 export default config
