@@ -16,3 +16,4 @@ tmp/
 # Local Netlify folder
 .netlify
 .claude/settings.local.json
+scripts/service-account-key.json
