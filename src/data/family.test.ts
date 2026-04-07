@@ -1,4 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
+import { getDocs } from 'firebase/firestore'
+import { fetchFamilyMembers } from './family'
 
 vi.mock('firebase/firestore', () => ({
   collection: vi.fn(),
@@ -8,9 +10,6 @@ vi.mock('firebase/firestore', () => ({
 vi.mock('#/lib/firebase', () => ({
   getFirebaseDb: vi.fn(() => 'mocked-db'),
 }))
-
-import { getDocs } from 'firebase/firestore'
-import { fetchFamilyMembers } from './family'
 
 function mockSnapshot(docs: Array<{ email?: string; name?: string }>) {
   vi.mocked(getDocs).mockResolvedValue({

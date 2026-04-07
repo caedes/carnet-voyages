@@ -1,6 +1,7 @@
 import { describe, it, expect, vi } from 'vitest'
+import { isFamilyMember } from './auth'
+import type { User } from 'firebase/auth'
 
-// Mock firebase modules before importing auth
 vi.mock('firebase/auth', () => ({
   GoogleAuthProvider: vi.fn(),
   onAuthStateChanged: vi.fn(),
@@ -11,9 +12,6 @@ vi.mock('firebase/auth', () => ({
 vi.mock('./firebase', () => ({
   getFirebaseAuth: vi.fn(),
 }))
-
-import { isFamilyMember } from './auth'
-import type { User } from 'firebase/auth'
 
 function mockUser(claims: Record<string, unknown>): User {
   return {
