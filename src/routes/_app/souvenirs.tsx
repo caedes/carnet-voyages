@@ -27,7 +27,7 @@ function SouvenirsPage() {
       day,
       memories: memories.filter((m) => m.dayId === day.id),
     }))
-    .filter(({ memories }) => memories.length > 0)
+    .filter(({ memories: dayMemories }) => dayMemories.length > 0)
 
   return (
     <div style={{ padding: 24 }}>
