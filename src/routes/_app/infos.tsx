@@ -1,6 +1,9 @@
+import { useState } from 'react'
 import { createFileRoute } from '@tanstack/react-router'
-import { Card, Typography } from 'antd'
-import { PhoneOutlined } from '@ant-design/icons'
+import { Card, Typography, Button } from 'antd'
+import { PhoneOutlined, FilePdfOutlined } from '@ant-design/icons'
+import { ref, getDownloadURL } from 'firebase/storage'
+import { getFirebaseStorage } from '#/lib/firebase'
 import {
   BUDGET_CATEGORIES,
   BUDGET_TOTAL_CONFIRMED,
@@ -37,8 +40,44 @@ const sectionTitle = (text: string) => (
 )
 
 function InfosPage() {
+  const [pdfLoading, setPdfLoading] = useState(false)
+
+  const handleOpenPdf = async () => {
+    setPdfLoading(true)
+    try {
+      const storage = getFirebaseStorage()
+      const pdfRef = ref(storage, 'carnet_canada_2026_CLV_v3.pdf')
+      const url = await getDownloadURL(pdfRef)
+      window.open(url, '_blank')
+    } catch {
+      // silently fail — button just stops loading
+    } finally {
+      setPdfLoading(false)
+    }
+  }
+
   return (
     <div style={{ padding: 24, display: 'flex', flexDirection: 'column', gap: 20 }}>
+      {/* Carnet de voyage PDF */}
+      <Card style={cardStyle}>
+        {sectionTitle('Carnet de voyage')}
+        <div style={{ marginTop: 16, display: 'flex', alignItems: 'center', gap: 12 }}>
+          <Button
+            type="primary"
+            icon={<FilePdfOutlined />}
+            onClick={handleOpenPdf}
+            loading={pdfLoading}
+            style={{
+              background: '#6366f1',
+              borderColor: '#6366f1',
+              borderRadius: 8,
+            }}
+          >
+            Voir le carnet de voyage
+          </Button>
+        </div>
+      </Card>
+
       {/* Budget */}
       <Card style={cardStyle}>
         {sectionTitle('Budget')}
