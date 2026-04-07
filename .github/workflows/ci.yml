@@ -17,6 +17,17 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
+      - name: Security audit
+        run: |
+          set +e
+          yarn audit --level high
+          AUDIT_EXIT=$?
+          set -e
+          if [ $((AUDIT_EXIT & 24)) -ne 0 ]; then
+            echo "High or critical vulnerabilities found"
+            exit 1
+          fi
+
       - name: Lint
         run: yarn lint
 
