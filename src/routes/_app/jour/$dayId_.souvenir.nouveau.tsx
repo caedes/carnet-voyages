@@ -10,7 +10,7 @@ import { uploadMedia } from '#/lib/storage'
 import MediaUpload from '#/components/MediaUpload'
 import type { MediaItem } from '#/data/types'
 
-export const Route = createFileRoute('/jour/$dayId_/souvenir/nouveau')({
+export const Route = createFileRoute('/_app/jour/$dayId_/souvenir/nouveau')({
   component: AddMemoryPage,
 })
 
@@ -71,7 +71,7 @@ function AddMemoryPage() {
         media: mediaItems,
       })
 
-      message.success('Souvenir ajout\u00e9 !')
+      message.success('Souvenir ajouté !')
       navigate({ to: '/jour/$dayId', params: { dayId } })
     } catch {
       message.error('Erreur lors de la publication')
@@ -142,7 +142,7 @@ function AddMemoryPage() {
             marginBottom: 8,
           }}
         >
-          Rattacher \u00e0 \u00b7 J{day.number}
+          Rattacher à · J{day.number}
         </span>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
           {day.stages.map((stage) => (
