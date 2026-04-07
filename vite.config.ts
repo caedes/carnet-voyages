@@ -13,9 +13,11 @@ const config = defineConfig({
   ],
   test: {
     environment: 'jsdom',
+    exclude: ['**/node_modules/**', '**/.claude/**'],
     coverage: {
       provider: 'v8',
       include: ['src/lib/**', 'src/data/**'],
+      exclude: ['src/lib/firebase.ts', 'src/lib/memories.ts', 'src/lib/storage.ts', 'src/data/types.ts'],
       reporter: ['text', 'json', 'json-summary'],
       reportsDirectory: 'coverage',
     },
