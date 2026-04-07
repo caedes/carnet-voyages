@@ -5,6 +5,7 @@ import {
   orderBy,
   onSnapshot,
   addDoc,
+  getCountFromServer,
   serverTimestamp,
 } from 'firebase/firestore'
 import { useQuery, useQueryClient, useMutation } from '@tanstack/react-query'
@@ -57,6 +58,16 @@ export function useAllMemories() {
     queryKey: ['memories', 'all'],
     queryFn: () => [],
     staleTime: Infinity,
+  })
+}
+
+export function useMemoriesCount() {
+  return useQuery<number>({
+    queryKey: ['memories', 'count'],
+    queryFn: async () => {
+      const snapshot = await getCountFromServer(query(getMemoriesRef()))
+      return snapshot.data().count
+    },
   })
 }
 

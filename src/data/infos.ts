@@ -34,7 +34,6 @@ export const TRIP_STATS = {
   days: 11,
   nights: 10,
   km: '1 450',
-  souvenirs: '∞',
 }
 
 export const CONTACTS: Contact[] = [
