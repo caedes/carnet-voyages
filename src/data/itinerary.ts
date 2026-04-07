@@ -20,6 +20,7 @@ export const ITINERARY: Day[] = [
     documents: [
       { icon: '🏠', label: 'Airbnb Downtown Serenity', detail: 'Réf. HMBEHM4AH4 · Check-in 16h', url: 'https://www.airbnb.fr/' },
       { icon: '✈️', label: 'Boarding Pass', detail: 'Vol aller', url: 'https://drive.google.com/file/d/1RWF-zcnSHwnZ2Aw1LKmDrK-Fc0r3RES4/view?usp=sharing' },
+      { icon: '🛬', label: 'Instructions arrivée Montréal', detail: 'À lire avant l\'arrivée', url: 'https://docs.google.com/document/d/1VIllw9EUWpAaAnxHdblIgrSGYNIKiXRvEPAvIIc_hJs/edit?usp=sharing' },
     ],
     stages: ['Aéroport YUL', 'Vieux-Port de Montréal', 'Airbnb Saint-Denis'],
     tips: ['Pas de voiture J1–J2 → économie parking ~30 CAD/nuit'],
@@ -44,6 +45,7 @@ export const ITINERARY: Day[] = [
     routes: [],
     documents: [
       { icon: '🏠', label: 'Airbnb Downtown Serenity', detail: '2e nuit', url: 'https://www.airbnb.fr/' },
+      { icon: '🛬', label: 'Instructions arrivée Montréal', detail: 'À lire avant l\'arrivée', url: 'https://docs.google.com/document/d/1VIllw9EUWpAaAnxHdblIgrSGYNIKiXRvEPAvIIc_hJs/edit?usp=sharing' },
     ],
     stages: ['Belvédère Kondiaronk', 'Lac aux Castors', 'RESO', 'Quartier des Spectacles'],
     tips: [],
