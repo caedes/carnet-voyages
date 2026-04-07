@@ -1,8 +1,7 @@
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import { Button, Typography, Space, message } from 'antd'
 import { GoogleOutlined } from '@ant-design/icons'
-import { signIn } from '#/lib/auth'
-import { isEmailAllowed } from '#/data/family'
+import { signIn, isFamilyMember } from '#/lib/auth'
 
 const { Title, Text } = Typography
 
@@ -16,7 +15,8 @@ function LoginPage() {
   async function handleLogin() {
     try {
       const result = await signIn()
-      if (!isEmailAllowed(result.user.email ?? '')) {
+      const allowed = await isFamilyMember(result.user)
+      if (!allowed) {
         message.error('Ce voyage est privé. Accès réservé à la famille.')
         return
       }

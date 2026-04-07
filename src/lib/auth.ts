@@ -7,7 +7,6 @@ import {
 } from 'firebase/auth'
 import type { User } from 'firebase/auth'
 import { getFirebaseAuth } from './firebase'
-import { isEmailAllowed } from '#/data/family'
 
 const provider = new GoogleAuthProvider()
 
@@ -17,6 +16,11 @@ export function signIn() {
 
 export function signOut() {
   return firebaseSignOut(getFirebaseAuth())
+}
+
+export async function isFamilyMember(user: User): Promise<boolean> {
+  const tokenResult = await user.getIdTokenResult()
+  return tokenResult.claims.familyMember === true
 }
 
 type AuthState =
@@ -30,7 +34,8 @@ export function useAuth(): AuthState {
   useEffect(() => {
     return onAuthStateChanged(getFirebaseAuth(), async (user) => {
       if (user) {
-        if (!isEmailAllowed(user.email ?? '')) {
+        const allowed = await isFamilyMember(user)
+        if (!allowed) {
           await firebaseSignOut(getFirebaseAuth())
           setState({ status: 'unauthenticated' })
           return
