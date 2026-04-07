@@ -66,3 +66,10 @@ Sentry.startSpan({ name: 'Requesting all the pokemon' }, async () => {
   await fetch('https://api.pokemon.com/data/')
 })
 ```
+
+## Git Workflow
+
+- Never commit directly to `main`. Always create a feature branch.
+- Branch naming: `feat/short-description`, `fix/short-description`, `chore/short-description`
+- All changes reach `main` via pull requests.
+- CI must pass before merging. The author reviews and merges.
