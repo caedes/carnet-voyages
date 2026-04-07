@@ -13,6 +13,12 @@ const config = defineConfig({
   ],
   test: {
     environment: 'jsdom',
+    coverage: {
+      provider: 'v8',
+      include: ['src/lib/**', 'src/data/**'],
+      reporter: ['text', 'json', 'json-summary'],
+      reportsDirectory: 'coverage',
+    },
   },
 })
 
