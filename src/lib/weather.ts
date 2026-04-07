@@ -39,7 +39,7 @@ export function getWeatherDisplay(code: number) {
   return WEATHER_CODES[code] ?? { icon: '🌡️', label: 'Inconnu' }
 }
 
-async function fetchWeather(lat: number, lng: number, date: string): Promise<WeatherData | null> {
+export async function fetchWeather(lat: number, lng: number, date: string): Promise<WeatherData | null> {
   const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&daily=temperature_2m_max,temperature_2m_min,temperature_2m_mean,precipitation_probability_max,wind_speed_10m_max,weather_code&start_date=${date}&end_date=${date}&timezone=America/Toronto`
 
   const res = await fetch(url)

@@ -3,7 +3,7 @@ import { collection, getDocs } from 'firebase/firestore'
 import { getFirebaseDb } from '#/lib/firebase'
 import type { FamilyMember } from './types'
 
-async function fetchFamilyMembers(): Promise<FamilyMember[]> {
+export async function fetchFamilyMembers(): Promise<FamilyMember[]> {
   const db = getFirebaseDb()
   const snapshot = await getDocs(collection(db, 'family'))
   return snapshot.docs.map((doc) => ({
