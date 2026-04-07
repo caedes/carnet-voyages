@@ -9,7 +9,7 @@ async function fetchFamilyMembers(): Promise<FamilyMember[]> {
   return snapshot.docs.map((doc) => ({
     email: doc.data().email,
     name: doc.data().name,
-    initial: doc.data().name[0],
+    initial: doc.data().name?.[0] ?? '?',
   }))
 }
 

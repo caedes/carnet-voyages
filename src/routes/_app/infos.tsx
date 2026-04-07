@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { createFileRoute } from '@tanstack/react-router'
-import { Card, Typography, Button } from 'antd'
+import { Card, Typography, Button, message } from 'antd'
 import { PhoneOutlined, FilePdfOutlined } from '@ant-design/icons'
 import { ref, getDownloadURL } from 'firebase/storage'
 import { getFirebaseStorage } from '#/lib/firebase'
@@ -50,7 +50,7 @@ function InfosPage() {
       const url = await getDownloadURL(pdfRef)
       window.open(url, '_blank')
     } catch {
-      // silently fail — button just stops loading
+      message.error('Impossible de charger le carnet de voyage.')
     } finally {
       setPdfLoading(false)
     }

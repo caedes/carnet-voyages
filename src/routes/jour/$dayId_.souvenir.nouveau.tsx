@@ -43,6 +43,7 @@ function AddMemoryPage() {
   if (!day) return null
 
   const handlePublish = async () => {
+    if (!selectedAuthor) return
     if (files.length === 0 && !description.trim()) {
       message.warning('Ajoutez au moins une photo ou une description')
       return
