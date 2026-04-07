@@ -99,7 +99,7 @@ function InfosPage() {
                 <Text style={{ color: '#94a3b8', fontSize: 13 }}>{item.label}</Text>
                 <Text
                   style={{
-                    color: item.status === 'estimated' ? '#f59e0b' : '#94a3b8',
+                    color: '#94a3b8',
                     fontSize: 13,
                     whiteSpace: 'nowrap',
                     marginLeft: 12,
