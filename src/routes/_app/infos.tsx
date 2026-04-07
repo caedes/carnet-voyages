@@ -46,7 +46,7 @@ function InfosPage() {
     setPdfLoading(true)
     try {
       const storage = getFirebaseStorage()
-      const pdfRef = ref(storage, 'carnet_canada_2026_CLV_v3.pdf')
+      const pdfRef = ref(storage, 'documents/carnet_canada_2026_CLV_v3.pdf')
       const url = await getDownloadURL(pdfRef)
       window.open(url, '_blank')
     } catch {

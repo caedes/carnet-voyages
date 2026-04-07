@@ -10,7 +10,7 @@ service firebase.storage {
       allow read, write: if isAllowedUser();
     }
 
-    match /{fileName} {
+    match /documents/{allPaths=**} {
       allow read: if isAllowedUser();
     }
   }
