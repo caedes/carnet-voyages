@@ -18,7 +18,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Security audit
-        run: yarn audit --level high
+        run: yarn audit --level high; exit_code=$?; if [ $((exit_code & 24)) -ne 0 ]; then exit 1; else exit 0; fi
 
       - name: Lint
         run: yarn lint
