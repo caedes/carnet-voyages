@@ -18,7 +18,8 @@ export const ITINERARY: Day[] = [
     ],
     routes: [],
     documents: [
-      { icon: '🏠', label: 'Airbnb Downtown Serenity', detail: 'Réf. HMBEHM4AH4 · Check-in 16h', url: '' },
+      { icon: '🏠', label: 'Airbnb Downtown Serenity', detail: 'Réf. HMBEHM4AH4 · Check-in 16h', url: 'https://www.airbnb.fr/' },
+      { icon: '✈️', label: 'Boarding Pass', detail: 'Vol aller', url: 'https://drive.google.com/file/d/1RWF-zcnSHwnZ2Aw1LKmDrK-Fc0r3RES4/view?usp=sharing' },
     ],
     stages: ['Aéroport YUL', 'Vieux-Port de Montréal', 'Airbnb Saint-Denis'],
     tips: ['Pas de voiture J1–J2 → économie parking ~30 CAD/nuit'],
@@ -42,7 +43,7 @@ export const ITINERARY: Day[] = [
     ],
     routes: [],
     documents: [
-      { icon: '🏠', label: 'Airbnb Downtown Serenity', detail: '2e nuit', url: '' },
+      { icon: '🏠', label: 'Airbnb Downtown Serenity', detail: '2e nuit', url: 'https://www.airbnb.fr/' },
     ],
     stages: ['Belvédère Kondiaronk', 'Lac aux Castors', 'RESO', 'Quartier des Spectacles'],
     tips: [],
@@ -169,15 +170,15 @@ export const ITINERARY: Day[] = [
     id: 'j7',
     number: 7,
     date: '2026-04-14',
-    title: 'Chutes Montmorency & Île d\'Orléans',
-    subtitle: 'Cascades, terroir & concert Paul Mirabel',
+    title: 'Chutes Montmorency & Paul Mirabel',
+    subtitle: 'Cascades, Île d\'Orléans & spectacle Paul Mirabel',
     distance: '80 km',
     duration: '1h30',
     location: { name: 'Québec', lat: 46.8139, lng: -71.2080 },
     schedule: [
       { time: '09h–11h', label: 'Chute Montmorency', description: '10 km / 15 min · débit maximal en avril (fonte des neiges !). Télécabine + passerelle suspendue.' },
       { time: '11h30–15h30', label: 'Île d\'Orléans', description: 'Circuit 67 km · 6 villages · cidre, fromage, confitures, chocolat' },
-      { time: '20h00', label: 'Concert — Paul Mirabel · Par amour', description: 'Centre Vidéotron · Sec. 103 · Rangée RR · Sièges 15–17' },
+      { time: '20h00', label: 'Spectacle — Paul Mirabel · Par amour', description: 'Centre Vidéotron · Sec. 103 · Rangée RR · Sièges 15–17' },
     ],
     routes: [
       { from: 'Sainte-Foy, Québec', to: 'Chute Montmorency', distance: '10 km', duration: '0h15', googleMapsUrl: 'https://www.google.com/maps/dir/Sainte-Foy,+Quebec+City,+QC/Parc+de+la+Chute-Montmorency' },
@@ -273,7 +274,7 @@ export const ITINERARY: Day[] = [
       { from: 'Tadoussac, QC', to: 'Montréal, QC', distance: '440 km', duration: '5h', googleMapsUrl: 'https://www.google.com/maps/dir/Tadoussac,+QC/Montreal,+QC' },
     ],
     documents: [
-      { icon: '🏨', label: 'Dernière nuit Montréal', detail: 'À réserver · ~120 €', url: '' },
+      { icon: '🏨', label: 'Dernière nuit Montréal', detail: 'Réservé', url: 'https://www.booking.com/' },
     ],
     stages: ['Traversier', 'Tadoussac bélugas', 'Route vers Montréal'],
     tips: ['Bélugas mi-avril : observation gratuite depuis la rive !', 'Jumelles indispensables.'],
